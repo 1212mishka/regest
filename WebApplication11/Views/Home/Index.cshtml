@@ -1,0 +1,23 @@
+﻿@model WebApplication11.User
+
+<h2>Регистрация</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" type="number" />
+        <span asp-validation-for="Age" style="color:red"></span>
+    </div>
+    <button type="submit">Зарегистрироваться</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
